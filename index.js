@@ -1,6 +1,7 @@
 const connectToMongo = require('./db')
 const express = require('express')
 var cors = require('cors')
+require('dotenv').config();
 
 
 
@@ -17,5 +18,5 @@ app.use('/api/auth', require('./routes/auth'))
 app.use('/api/notes', require('./routes/notes'))
 
 app.listen(port, () => {
-  console.log(`NoteKaro App listening at http://127.0.0.1:${port}`)
+  console.log(`NoteKaro App listening at ${process.env.REACT_APP_BASE_URL}:${port}`)
 })

@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
-
+const DATABASE = process.env.DATABASE
+require('dotenv').config();
 // Database connection URL
-const mongoURL = 'mongodb+srv://priyanshu:diya1028@cluster0.ztwwqop.mongodb.net/NoteKaroDB?retryWrites=true&w=majority';
+const mongoURL = `${process.env.REACT_APP_DATABASE}`;
 
 const connectToMongo = () => {
   mongoose.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true })
